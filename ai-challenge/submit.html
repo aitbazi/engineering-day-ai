@@ -1,0 +1,208 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="Submit your AI Engineering Challenge project" />
+  <title>Submit Project — AI Engineering Challenge 2026</title>
+  <link rel="stylesheet" href="css/style.css" />
+  <style>
+    /* ── extra error state ── */
+    .field.field-error input,
+    .field.field-error textarea,
+    .field.field-error select {
+      border-color: var(--accent-p);
+      box-shadow: 0 0 0 3px rgba(240,64,160,.12);
+    }
+
+    .field.field-error label { color: var(--accent-p); }
+
+    /* type-picker error */
+    .field.field-error .type-picker .type-option label {
+      border-color: rgba(240,64,160,.35);
+    }
+  </style>
+</head>
+<body>
+
+  <!-- ── NAV ─────────────────────────────────────────────── -->
+  <nav class="nav">
+    <div class="nav-inner">
+      <span class="nav-logo">AI<span>·</span>ENG</span>
+      <a href="index.html"  class="nav-link">🏆 Projects</a>
+      <a href="submit.html" class="nav-link active">📤 Submit</a>
+    </div>
+  </nav>
+
+  <!-- ── MAIN ─────────────────────────────────────────────── -->
+  <main class="wrapper" style="padding-top:60px;padding-bottom:100px;">
+
+    <div class="form-wrap">
+
+      <div class="section-head anim anim-d1">
+        <h2>Submit Your <span class="accent-y">Project</span></h2>
+        <p>Fill in the details about your group's engineering challenge entry. All fields marked <span style="color:var(--accent-p)">*</span> are required.</p>
+      </div>
+
+      <form id="submit-form" novalidate>
+
+        <div class="form-grid">
+
+          <!-- Group -->
+          <div class="field anim anim-d2">
+            <label for="f-group">Group <span class="req">*</span></label>
+            <div class="select-wrap">
+              <select id="f-group" name="group">
+                <option value="">— Select your group —</option>
+                <option value="Group 1">Group 1</option>
+                <option value="Group 2">Group 2</option>
+                <option value="Group 3">Group 3</option>
+                <option value="Group 4">Group 4</option>
+                <option value="Group 5">Group 5</option>
+                <option value="Group 6">Group 6</option>
+                <option value="Group 7">Group 7</option>
+                <option value="Group 8">Group 8</option>
+              </select>
+            </div>
+          </div>
+
+          <!-- Title -->
+          <div class="field anim anim-d2">
+            <label for="f-title">Project Title <span class="req">*</span></label>
+            <input
+              type="text"
+              id="f-title"
+              name="title"
+              placeholder="Give your project a cool name…"
+              autocomplete="off"
+              maxlength="120"
+            />
+          </div>
+
+          <!-- Type — full width -->
+          <div class="field field-full anim anim-d3" id="field-type">
+            <label>Project Type <span class="req">*</span></label>
+            <div class="type-picker">
+              <div class="type-option">
+                <input type="radio" name="type" id="t-game"  value="game"  />
+                <label for="t-game">
+                  <span class="ticon">🎮</span>
+                  Game
+                </label>
+              </div>
+              <div class="type-option">
+                <input type="radio" name="type" id="t-video" value="video" />
+                <label for="t-video">
+                  <span class="ticon">🎬</span>
+                  Video
+                </label>
+              </div>
+              <div class="type-option">
+                <input type="radio" name="type" id="t-other" value="other" />
+                <label for="t-other">
+                  <span class="ticon">💡</span>
+                  Other
+                </label>
+              </div>
+            </div>
+          </div>
+
+          <!-- Description — full width -->
+          <div class="field field-full anim anim-d3">
+            <label for="f-desc">
+              Description <span class="req">*</span>
+              <span class="hint">What did you build? What engineering topic?</span>
+            </label>
+            <textarea
+              id="f-desc"
+              name="description"
+              placeholder="Describe your project, the engineering concepts it covers, and how you used AI tools to create it…"
+              maxlength="1200"
+            ></textarea>
+          </div>
+
+          <!-- AI Tools -->
+          <div class="field anim anim-d4">
+            <label for="f-tools">
+              AI Tools Used
+              <span class="hint">Optional</span>
+            </label>
+            <input
+              type="text"
+              id="f-tools"
+              name="tools"
+              placeholder="e.g. Claude, ChatGPT, Midjourney…"
+              autocomplete="off"
+            />
+          </div>
+
+          <!-- Team Members -->
+          <div class="field anim anim-d4">
+            <label for="f-members">
+              Team Members
+              <span class="hint">Optional</span>
+            </label>
+            <input
+              type="text"
+              id="f-members"
+              name="members"
+              placeholder="Alice, Bob, Carlos…"
+              autocomplete="off"
+            />
+          </div>
+
+          <!-- Project / Code Link -->
+          <div class="field anim anim-d5">
+            <label for="f-link1">
+              Project / Code Link
+              <span class="hint">GitHub, itch.io, Drive…</span>
+            </label>
+            <input
+              type="url"
+              id="f-link1"
+              name="link1"
+              placeholder="https://github.com/yourteam/project"
+            />
+          </div>
+
+          <!-- Demo / Video Link -->
+          <div class="field anim anim-d5">
+            <label for="f-link2">
+              Demo / Video Link
+              <span class="hint">YouTube, Drive…</span>
+            </label>
+            <input
+              type="url"
+              id="f-link2"
+              name="link2"
+              placeholder="https://youtube.com/watch?v=…"
+            />
+          </div>
+
+        </div><!-- /form-grid -->
+
+        <div class="form-actions anim anim-d5">
+          <button type="submit" class="btn btn-primary btn-submit">
+            Submit Project →
+          </button>
+          <p class="form-note">
+            Saved in this browser.<br>
+            No login needed.
+          </p>
+        </div>
+
+      </form>
+    </div><!-- /form-wrap -->
+
+  </main>
+
+  <!-- ── TOAST ─────────────────────────────────────────────── -->
+  <div class="toast" id="toast" role="alert" aria-live="polite"></div>
+
+  <!-- ── SCRIPTS ───────────────────────────────────────────── -->
+  <script src="js/data.js"></script>
+  <script src="js/ui.js"></script>
+  <script src="js/submit.js"></script>
+
+</body>
+</html>
